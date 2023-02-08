@@ -1,5 +1,36 @@
 :root {
-    --red: #CA3604;
+    --red: #CA3604 !important;
     --darkred: #A83311;
     --pink: #F4E7E0;
+}
+
+body{
+    font-family: "Rubik";
+    background-color: var(--darkred);
+}
+
+.bg-primary{
+    background-color: var(--pink)!important;
+}
+
+.bg-secondary{
+    background-color: var(--red)!important;
+}
+
+.text-primary{
+    color: var(--red)!important;
+}
+
+.text-secondary{
+    color: var(--pink)!important;
+}
+
+.btn-primary{
+    background-color: var(--red);
+    color: var(--pink);
+    border: var(--darkred);
+}
+
+.navbar-brand{
+    color: var(--pink)!important;
 }
