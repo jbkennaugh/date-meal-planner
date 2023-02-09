@@ -1126,4 +1126,9 @@ $("#save-services-btn").on("click", function(){
         serviceChecks[i] = $(`div[data-label="${services[i].short}"`).find("input").prop("checked");
     }
     localStorage.setItem("serviceChecks",JSON.stringify(serviceChecks));
+
+    $(".confirmation").toggleClass("hide");
+    setTimeout(function(){
+        $(".confirmation").toggleClass("hide");
+    }, 3000);
 })
