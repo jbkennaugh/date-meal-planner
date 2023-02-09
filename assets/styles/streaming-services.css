@@ -64,3 +64,11 @@ input:checked + .slider:before {
 #save-services-btn:hover{
     background-color: darkgreen;
 }
+
+.hide {
+    display: none;
+}
+
+.confirmation{
+    font-weight: bold;
+}
