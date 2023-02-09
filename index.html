@@ -14,9 +14,9 @@
 <body>
     <nav class="navbar navbar-expand-md bg-secondary">
         <div class="container-xxl align-center">
-            <a href="#meals" class="navbar-brand">Meals</a>
-            <a href="#cocktails" class="navbar-brand">Cocktails</a>
-            <a href="#movies" class="navbar-brand">Movies</a>
+            <a href="meals.html" class="navbar-brand">Meals</a>
+            <a href="cocktails.html" class="navbar-brand">Cocktails</a>
+            <a href="movies.html" class="navbar-brand">Movies</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#options-nav" aria-controls="options-nav" aria-expanded="false" aria-label="Toggle Options Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,54 +35,60 @@
         <p class="p1 text-primary lead">
             This website can be used to plan your perfect date, start off with a delicious recommended recipe, wash it down with a suggested cocktail and finish of the night with a movie to stream, complete with recommendations based on genre, and not only that, it will even tell you where you can stream it from.
         </p>
-        <p class="p1 text-primary lead">
+        <p class="p1 text-primary lead pb-5">
             Or maybe random suggestions isn't your sort of thing, fear not, you can also search for meals based on your dietary requirements, or by simply entering a few prompts such as the ingredients you have lying around.
         </p>
     </section>
-    <section class="row container mx-auto text-center bg-secondary">
-        <div class="card col-4">
-            <img src="./assets/images/meals" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Meals</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Get a random meal suggestion</li>
-                <li class="list-group-item">Search recipes by ingredients</li>
-                <li class="list-group-item">PLACEHOLDER TEXT</li>
-            </ul>
-            <div class="card-body">
-                <button class="btn btn-primary">Card link</button>
-            </div>
-        </div>
-        <div class="card col-4">
-            <img src="./assets/images/cocktails" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Cocktails</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <button class="btn btn-primary">Card link</button>
+    <section class="row container mx-auto text-center bg-secondary text-primary">
+        <div class="col-sm-4">    
+            <div class="card my-3 p-1 bg-primary">
+                <img src="./assets/images/meals.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Meals</h5>
+                    <p class="card-text">Everything you need for the perfect date night meal.</p>
+                </div>
+                <ul class="list-group bg-primary">
+                    <li class="list-group-item">Get a random meal suggestion</li>
+                    <li class="list-group-item">Search recipes by ingredients</li>
+                    <li class="list-group-item">Apply filters such as dietary restrictions</li>
+                </ul>
+                <div class="card-body">
+                    <button id="meals-btn" class="btn btn-primary">Get your recipe!</button>
+                </div>
             </div>
         </div>
-        <div class="card col-4">
-            <img src="./assets/images/movies" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Movies</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-sm-4">
+            <div class="card my-3 p-1 bg-primary">
+                <img src="./assets/images/cocktails.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cocktails</h5>
+                    <p class="card-text">Don't forget about the cocktail, or... uh... cocktails.</p>
+                </div>
+                <ul class="list-group bg-primary">
+                    <li class="list-group-item">Get a random cocktail suggestion</li>
+                    <li class="list-group-item">Search by first letter of your SO's name</li>
+                    <li class="list-group-item">Apply filters such as alcoholic/non-alcoholic</li>
+                </ul>
+                <div class="card-body">
+                    <button id="cocktails-btn" class="btn btn-primary">Get your cocktail!</button>
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <button class="btn btn-primary">Card link</button>
+        </div>
+        <div class="col-sm-4">
+            <div class="card my-3 p-1 bg-primary">
+                <img src="./assets/images/movies.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Movies</h5>
+                    <p class="card-text">A perfect way to end the night, or start it if you just fancy relaxing</p>
+                </div>
+                <ul class="list-group bg-primary">
+                    <li class="list-group-item">Search movies by genre</li>
+                    <li class="list-group-item">Show where you can watch each movie</li>
+                    <li class="list-group-item">PLACEHOLDER TEXT</li>
+                </ul>
+                <div class="card-body">
+                    <button id="movies-btn" class="btn btn-primary">Get your movies!</button>
+                </div>
             </div>
         </div>
     </section>
