@@ -1,7 +1,8 @@
 :root {
-    --red: #CA3604 !important;
-    --darkred: #A83311;
-    --pink: #F4E7E0;
+    --red:#CA3604 !important;
+    --darkred:#A83311;
+    --darkestred:#81290e;
+    --pink:#F4E7E0;
 }
 
 body{
@@ -28,7 +29,12 @@ body{
 .btn-primary{
     background-color: var(--red);
     color: var(--pink);
-    border: var(--darkred);
+    border-color: var(--darkred);
+}
+
+.btn-primary:hover{
+    background-color: var(--darkestred);
+    border-color: var(--red);
 }
 
 .navbar-brand{

@@ -56,3 +56,11 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+#save-services-btn{
+    background-color: green;
+}
+
+#save-services-btn:hover{
+    background-color: darkgreen;
+}
