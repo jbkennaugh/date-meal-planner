@@ -1113,14 +1113,15 @@ function displayServices() {
         let check = $("<input>").attr("type", "checkbox").prop("checked", serviceChecks[i]);
         let switcher = $("<label>").addClass("switch").append(check, slider);
 
-        let service = $("<div>").text(services[i].label).attr("data-label", services[i].short);
-        service.append(switcher);
+        let serviceName = $("<p>").text(services[i].label).addClass("text-primary text-center m-2")
+        let serviceDiv = $("<div>").attr("data-label", services[i].short).addClass("d-flex justify-content-center align-items-center m-3");
+        serviceDiv.append(serviceName, switcher);
 
-        streamingServicesDiv.append(service);
+        streamingServicesDiv.append(serviceDiv);
     }
 }
 
-$("#save-services").on("click", function(){
+$("#save-services-btn").on("click", function(){
     for(let i=0; i<services.length; i++){
         serviceChecks[i] = $(`div[data-label="${services[i].short}"`).find("input").prop("checked");
     }
