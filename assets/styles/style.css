@@ -7,9 +7,13 @@
 
 body{
     font-family: "Rubik";
-    background-color: var(--darkred);
+    background-color: var(--darkred) !important;
 }
+.header{
+    background-color: #CA3604 !important;
+    ;
 
+}
 .bg-primary{
     background-color: var(--pink)!important;
 }
