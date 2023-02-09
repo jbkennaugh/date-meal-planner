@@ -18,7 +18,7 @@ body{
 }
 
 .text-primary{
-    color: var(--red)!important;
+    color: var(--darkred)!important;
 }
 
 .text-secondary{
