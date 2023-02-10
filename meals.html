@@ -11,7 +11,58 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-md bg-secondary">
+        <div class="container-xxl d-flex">
+            <a href="meals.html" class="navbar-brand">Meals</a>
+            <a href="cocktails.html" class="navbar-brand">Cocktails</a>
+            <a href="movies.html" class="navbar-brand">Movies</a>
+            <input type="text" placeholder="Search meals" class="ps-3 mx-3 flex-fill">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#options-nav" aria-controls="options-nav" aria-expanded="false" aria-label="Toggle Options Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="options-nav">
+                <ul class="nav justify-content-end align-center">
+                    <li class="nav-item">
+                        <a href="streaming-services.html" class="nav-link text-secondary">Configure Streaming Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="example-meals" class="container bg-primary">
+        example meals
+    </section>
+    <section id="meal-search-results" class="container bg-primary hide">
+        meal search results
+    </section>
+    <section id="chosen-meal" class="container bg-primary hide">
+        chosen meal
+    </section>
+
+    <section id="meal-search-restrictions">
+        <div id="choose-diet-requirements" class="bg-primary w-100 choose hide">
+            Choose diet requirements
+            <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
+        </div>
+        <div id="choose-ingredients" class="bg-primary w-100 choose hide">
+            Choosen ingredients
+            <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
+        </div>
+        <div id="choose-first-letter" class="bg-primary w-100 choose hide">
+            Choose first letter
+            <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
+        </div>
+    </section>
     
+    <nav id="restrictions-selector" class="navbar fixed-bottom bg-secondary d-flex justify-content-around">
+        <div id="diet-requirements" class="navbar-brand flex-fill text-center">Dietary Requirements</div>
+        <div id="ingredients" class="navbar-brand flex-fill text-center">Included Ingredients</div>
+        <div id="first-letter" class="navbar-brand flex-fill text-center">Search Meals by First Letter</div>
+    </nav>
     <!--Adding bootstrap and jQuery-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
