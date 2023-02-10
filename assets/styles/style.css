@@ -40,3 +40,26 @@ body{
 .navbar-brand{
     color: var(--pink)!important;
 }
+
+.hide {
+    display: none;
+}
+
+input{
+    border-radius: 200px;
+    background-color: var(--pink);
+    color: var(--darkred);
+    border-color: var(--darkestred);
+}
+
+.choose{
+    position:absolute;
+    bottom:56px;
+}
+
+.highlight{
+    background-color: var(--darkestred);
+    border-style: none solid;
+    border-color: white;
+    font-weight: bold;
+}
