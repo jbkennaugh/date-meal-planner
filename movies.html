@@ -13,7 +13,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body >
     <nav class="navbar navbar-expand-md header">
         <div class="container-xxl align-center">
             <a href="#meals" class="navbar-brand">Meals</a>
@@ -29,7 +29,10 @@
                         <a href="streaming-services.html" class="nav-link text-secondary">Configure Streaming
                             Services</a>
                     </li>
+
                 </ul>
+                    <input class="form-control me-2" type="search" placeholder="Search"  id="input" aria-label="Search">
+                    <button class="btn btn-outline-success"  onclick="Seach()">Search</button>
             </div>
         </div>
     </nav>
@@ -37,11 +40,23 @@
     <div class="genre">
         <div class="dropdown">
             <button style="border: 1px solid white; background-color: black; color: #ffffff; margin: 100px;" class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Gener
+                aria-expanded="false"  onclick="getGenre()">
+                Genre
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" id="gener"></a></li>
+                <li class="dropdown-item" href="#" id="genre" >
+                    <div class="row">
+                        <div class="col-md-4" id="genreOne">
+                            
+                        </div>
+                        <div class="col-md-4" id="genreTwo">
+                            
+                        </div>
+                        <div class="col-md-4" id="genreThree">
+                            
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -61,6 +76,11 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./assets/js/movies.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            searchgenre();
+});
+    </script>
 </body>
 
 </html>
