@@ -63,3 +63,12 @@ input{
     border-color: white;
     font-weight: bold;
 }
+
+#restrictions-selector{
+    padding:0;
+}
+
+.restrictions-nav-item{
+    padding:13px 0;
+    margin:0;
+}
