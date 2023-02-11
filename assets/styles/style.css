@@ -32,6 +32,16 @@ body{
     text-decoration: none;
     color: white;
 }
+#movies{
+    padding:0 100px;
+    text-align: center;
+}
+#movies img{
+    margin: 10px;
+}
+#movies h1{
+    display: inline-block;
+}
 .bg-primary{
     background-color: var(--pink)!important;
 }
