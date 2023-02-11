@@ -54,3 +54,14 @@ Developed in accordance with the following acceptance criteria:
 
 If you have any feedback, please reach out to us at JOEY + JOE VALENTINES DAY CAROUSEL WEBPAGE
 
+
+what i have been up too:
+
+- Maintained repo and updated tasks done on Asana
+- Added CSS to html file default colour schemes that was preselected by me and Joe K
+- Started and nearly completed work on movies html, javascript and css files
+- Organised movies into sub catergories with genres
+- Added navbar for movies html page
+- Added Search funtionality bar for movies search on main movies html page
+
+
