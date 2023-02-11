@@ -52,5 +52,5 @@ Developed in accordance with the following acceptance criteria:
 
 ## Contact 
 
-If you have any feedback, please reach out to us at facebook@mail.com
+If you have any feedback, please reach out to us at JOEY + JOE VALENTINES DAY CAROUSEL WEBPAGE
 
