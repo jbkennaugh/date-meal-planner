@@ -1101,7 +1101,7 @@ let services = [
     }
 ]
 
-let serviceChecks = JSON.parse(localStorage.getItem('serviceChecks')) ?? [];
+let serviceChecks = JSON.parse(localStorage.getItem('serviceChecks')) ?? [true, true, true];
 
 let streamingServicesDiv = $("#streaming-services")
 
