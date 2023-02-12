@@ -9,8 +9,7 @@ var content = document.getElementById("movies");
 
 const input = document.getElementById("input");
 
-function Seach(e) {
-	console.log(input.value);
+function Search(e) {
 	content.innerHTML = ''
 	fetch(`https://ott-details.p.rapidapi.com/search?title=${input.value}&page=1`, options)
 		.then(response => response.json())
@@ -19,8 +18,6 @@ function Seach(e) {
 			const list = response.results;
 
 			list.map((item) => {
-				console.log(item);
-
 				content.innerHTML += `
             <img src="${item.imageurl}" alt="">`;
 			})
@@ -30,9 +27,6 @@ function Seach(e) {
 }
 function genreItem(params) {
 	params.preventDefault();
-	console.log('hi');
-
-	
 }
 
 function getGenre(i) {
@@ -51,7 +45,6 @@ function getGenre(i) {
 			const genretwo= response.slice(11,20);
 			const genreThree= response.slice(20,26);
 			genreOne.map((i) => {
-				console.log(i);
 				const genreOne = document.getElementById("genreOne");
 				genreOne.innerHTML += `
 				<a href="" onclick='genreItem()'>${i}</a> <br>
@@ -59,7 +52,6 @@ function getGenre(i) {
 
 			})
 			genretwo.map((i) => {
-				console.log(i);
 				const genreTwo = document.getElementById("genreTwo");
 				genreTwo.innerHTML += `
 				<a href="">${i}</a> <br>
@@ -67,20 +59,17 @@ function getGenre(i) {
 
 			})
 			genreThree.map((i) => {
-				console.log(i);
 				const genreThree = document.getElementById("genreThree");
 				genreThree.innerHTML += `
 				<a href="">${i}</a> <br>
 				`;
 
 			})
-			
-			console.log(object);
 		})
 		.catch(err => console.error(err));
 
 }
-function searchgenre(params) {
+function searchGenre(params) {
 	const options = {
 		method: 'GET',
 		headers: {
@@ -92,12 +81,9 @@ function searchgenre(params) {
 	fetch(`https://ott-details.p.rapidapi.com/advancedsearch?start_year=1970&end_year=2020&min_imdb=6&max_imdb=7.8&genre=${'action'}&language=english&type=movie&sort=latest&page=1`, options)
 		.then(response => response.json())
 		.then(response => {
-			console.log(response.results);
 			const list = response.results;
 
 			list.map((item) => {
-				console.log(item);
-
 				content.innerHTML += `
 
             <img src="${item.imageurl}" alt="">`;
@@ -105,7 +91,6 @@ function searchgenre(params) {
 
 		})
 		.catch(err => console.error(err));
-	
 }
 
 
