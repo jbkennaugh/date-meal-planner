@@ -11,7 +11,7 @@
 
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
-// 	const gn = document.getElementById("gener");
+// 	const gn = document.getElementById("genre");
 // 	response.map((genre) => {
 // 		gn.innerHTML += `<br> ${genre}`;
 
