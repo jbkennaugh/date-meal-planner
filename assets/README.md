@@ -1,23 +1,12 @@
 
 # Movie App-rapid Api
-In this app user can search and  sort out a movie woth names and ratings aslo.It is created with rapid api.
+In this app user can search and  sort out a movie woth names and ratings as it is created with rapid api movies api.
 
 ## Getting Started
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
 
 - GitHub Repository
 - Deployed GitHub IO
-
-
-
-## Installing
-
-To install this code, download the zip file, or use GitHub's guidelines to clone the repository.
-
-
-- An interactive, timed JavaScript quiz that stores a high score leaderboard in local storage.
-Developed in accordance with the following acceptance criteria: 
-
 
 
 
