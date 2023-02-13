@@ -4,31 +4,35 @@
     --darkestred:#81290e;
     --pink:#F4E7E0;
 }
+
 *{
     margin: 0;
     padding: 0;
 }
+
 .dropdown-item:focus, .dropdown-item:hover {
     color:black !important;
     background-color: black !important;
 }
+
 body{
     font-family: "Rubik";
     background-color: var(--darkred) !important;
 }
-
 
 .dropdown li{
     width: 1005;
     background-color: black;
     
 }
+
 .dropdown div a{
     padding: 20px;
     margin: 10px;
     text-decoration: none;
     color: white;
 }
+ 
 #movies{
     padding:0 100px;
     text-align: center;
@@ -120,7 +124,7 @@ input{
 }
 
 .random-meal{
-    border-bottom: 5px solid var(--darkestred);
+    border: 5px solid var(--darkestred);
 }
 
 .random-meal:hover{

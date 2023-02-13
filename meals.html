@@ -16,7 +16,7 @@
             <a href="index.html" class="navbar-brand">Home</a>
             <a href="cocktails.html" class="navbar-brand">Cocktails</a>
             <a href="movies.html" class="navbar-brand">Movies</a>
-            <input type="text" placeholder="Search meals" class="form-control mx-3 flex-fill">
+            <input id="meal-search-query" type="text" placeholder="Search meals" class="form-control mx-3 flex-fill">
             <button id="meal-search-btn" class="btn btn-secondary">Search</button>
         </div>
     </nav>
@@ -36,11 +36,11 @@
             <h2>Choose dietary requirements</h2>
             <div class="d-flex flex-column justify-content-between w-75 flex-grow-1">
                 <label class="text-center">
-                    Enter any allergies separated by a comma and a space (e.g. "nuts, eggs"):<br>    
+                    Enter any allergies separated by a comma (e.g. "nuts,eggs"):<br>    
                     <input type="text" name="allergies" id="allergies" placeholder="allergies" class="form-control text-center">
                 </label>
                 <label class="text-center">
-                    Enter any intolerances separated by a comma and a space (e.g. "milk, gluten"):<br>    
+                    Enter any intolerances separated by a comma(e.g. "dairy,gluten"):<br>    
                     <input type="text" name="intolerances" id="intolerances" placeholder="intolerances" class="form-control text-center">
                 </label>
                 <div class="checkboxes d-flex justify-content-between w-50 align-self-center">
@@ -61,10 +61,10 @@
         <div id="choose-ingredients" class="container-fluid p-3 mx-3 text-center bg-primary filters-popup choose hide">
             <h2>Choose ingredients</h2>
             <label class="text-center lead mb-2">
-                Enter any ingredients below you want to be included in the meal, you can either enter them one by one and hit save each time, or enter them separated by a space and a comma, as follows ("beef, bun, cheese"):   
+                Enter any ingredients below you want to be included in the meal, you can either enter them one by one and hit save each time, or enter them separated by a comma, as follows ("beef,bun,cheese"):   
                 <input type="text" name="ingredients" id="ingredients-input" placeholder="ingredients" class="form-control text-center mt-3">
             </label>
-            <ul id="chosen-ingredients" class="list-group list-group-horizontal justify-content-center">
+            <ul id="chosen-ingredients" class="d-flex list-group list-group-horizontal justify-content-center align-items-center">
             </ul>
             <div class="d-flex justify-content-center">
                 <button id="save-ingredients-btn" class="btn btn-primary m-2">Save</button>
