@@ -123,15 +123,15 @@ input{
     border-right: 5px solid black;
 }
 
-.random-meal{
+.meal-container{
     border: 5px solid var(--darkestred);
 }
 
-.random-meal:hover{
+.meal-container:hover{
     border: 10px solid var(--red);
 }
 
-.random-meal p{
+.meal-container p{
     font-size: 20px;
 }
 
@@ -140,6 +140,11 @@ input{
     width: 20vw;
 }
 
+.list-group-item-primary{
+    color: var(--pink);
+    background-color: var(--darkred);
+}
+
 .hide {
-    display: none;
+    display: none!important;
 }
