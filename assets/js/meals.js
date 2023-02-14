@@ -13,7 +13,8 @@ let apiKey = "0c5de3ab864c4282a490494168d4cf83";
 let randomMealURL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`
 let mealByIngredientsURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=`
 let mealByQueryURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
-let randomMealsSection = $("#random-meals");
+let displayMealsSection = $("#meals-container");
+let recipesInfo;
 
 getRandomMeals();
 
@@ -37,6 +38,7 @@ function getRandomMeals(){
         method: "GET"
     })
     .then(function(response) {
+        recipesInfo = response
         displayRandomMeals(response.recipes);
     });
 }
@@ -56,6 +58,7 @@ function getMealsByIngredients(){
         method: "GET"
     })
     .then(function(response) {
+        recipesInfo = response;
         displayIngredientMeals(response);
     });
 }
@@ -111,39 +114,37 @@ function getRecipeFromIDs(queriedMeals){
             method: "GET"
         })
         .then(function(response) {
-            console.log(response);
             recipes.push(response);
         });
     }
-
+    recipesInfo = recipes;
     displayRandomMeals(recipes);
 }
 
 //used to display random meal info from API
 function displayRandomMeals(recipes){
-    console.log(recipes);
-    randomMealsSection.empty();
+    displayMealsSection.empty();
     for(let i=0; i<10; i++){
-        let mealDiv = $("<div>").addClass("random-meal row d-flex align-items-center justify-content-around p-3").attr("meal-number", i);
+        let mealDiv = $("<div>").addClass("meal-container row d-flex align-items-center justify-content-around p-3").attr({"meal-number":i, "id":i});
         let mealImage = $("<img>").addClass("meal-preview").attr("src", recipes[i].image)
         let mealName = $("<h2>").addClass("col-3").text(recipes[i].title)
         let mealInfo = $("<div>").addClass("col-3 d-flex flex-column justify-content-center");
         let servings = $("<p>").text(`Servings: ${recipes[i].servings}`);
         let duration = $("<p>").text(`Ready in: ${recipes[i].readyInMinutes} minutes`);
         let pricePerServing = $("<p>").text(`Price per serving: £${(recipes[i].pricePerServing/100).toFixed(2)}`);
-        let veg = $("<p>").text(`Vegetarian: ${recipes[i].vegetarian} / Vegan: ${recipes[i].vegan}`)
+        let veg = $("<p>").text(`Vegetarian: ${recipes[i].vegetarian}  /  Vegan: ${recipes[i].vegan}`)
         
         mealInfo.append(servings, duration, pricePerServing, veg);
         mealDiv.append(mealImage, mealName, mealInfo);
-        randomMealsSection.append(mealDiv);
+        displayMealsSection.append(mealDiv);
     }
 }
 
 //used to display meals found by ingredients from the API
 function displayIngredientMeals(response){
-    randomMealsSection.empty();
+    displayMealsSection.empty();
     for(let i=0; i<10; i++){
-        let mealDiv = $("<div>").addClass("random-meal row d-flex align-items-center justify-content-around p-3").attr("meal-number", i);
+        let mealDiv = $("<div>").addClass("meal-container row d-flex align-items-center justify-content-around p-3").attr({"meal-number":i, "id":i});
         let mealImage = $("<img>").addClass("meal-preview").attr("src", response[i].image)
         let mealName = $("<h2>").addClass("col-3").text(response[i].title)
         let mealInfo = $("<div>").addClass("col-3 d-flex flex-column justify-content-center");
@@ -152,7 +153,7 @@ function displayIngredientMeals(response){
         
         mealInfo.append(usedIngredients, missedIngredients);
         mealDiv.append(mealImage, mealName, mealInfo);
-        randomMealsSection.append(mealDiv);
+        displayMealsSection.append(mealDiv);
     }
 }
 
@@ -226,3 +227,68 @@ $("#meal-search-btn").on("click", function(){
         getMealsByQuery(query);
     }
 })
+
+//listens for return button press
+$(document).on("click", "#return-btn", function(){
+    $("#chosen-meal").toggleClass("hide");
+    $("#meals-container").toggleClass("hide");
+})
+
+//listens for clicking on the website and checks if they've clicked on a div containing a meal
+$(document).on("click", ".meal-container", function(event){
+    $("#meals-container").addClass("hide");
+    $("#chosen-meal").toggleClass("hide").empty();
+
+    let target = event.target;
+    //ensures the target is the meal container div
+    if(target.nodeName === "IMG" || target.nodeName === "H2" || target.nodeName === "P" || (target.nodeName === "DIV" && target.attr("class") === "col-3 d-flex flex-column justify-content-center")){
+        var selectedMealDiv = target.parentNode;
+    }
+    else{
+        var selectedMealDiv = target;
+    }
+    
+    //defined some variables mostly for readability
+    selectedMealDiv = $(`#${selectedMealDiv.id}`); //converts to jquery for jquery functions
+    let selectedMealNumber = selectedMealDiv.attr("meal-number");
+    let recipes = recipesInfo.recipes;
+    let instructions = recipes[selectedMealNumber].analyzedInstructions[0].steps;
+    let ingredients = recipes[selectedMealNumber].extendedIngredients;
+    console.log(recipesInfo);
+
+    let mealHeading = $("<div>").addClass("row align-items-center justify-content-around p-3")
+    let mealImage = $("<img>").addClass("meal-preview col-3").attr("src", recipes[selectedMealNumber].image)
+    let mealName = $("<h1>").addClass("col-9 text-center").text(recipes[selectedMealNumber].title)
+    
+    let mealInfo = $("<div>").addClass("row flex-row align-items-center justify-content-around text-center p-3");
+    let servings = $("<h4>").text(`Servings: ${recipes[selectedMealNumber].servings}`).addClass("col");
+    let duration = $("<h4>").text(`Ready in: ${recipes[selectedMealNumber].readyInMinutes} minutes`).addClass("col");
+    let pricePerServing = $("<h4>").text(`Price per serving: £${(recipes[selectedMealNumber].pricePerServing/100).toFixed(2)}`).addClass("col");
+    let veg = $("<h4>").text(`Vegetarian: ${recipes[selectedMealNumber].vegetarian}  /  Vegan: ${recipes[selectedMealNumber].vegan}`).addClass("col");
+
+    let mealIngredients = $("<div>").addClass("row align-items-center justify-content-around p-3")
+    let ingredientsHeading = $("<h2>").text("Ingredients: ").addClass("text-center")
+    let ingredientsList = $("<ul>").addClass("list-group list-group-flush p-3")
+    //goes through list of ingredients
+    for (let i=0; i<ingredients.length; i++){
+        let ingredient = $("<li>").text(`${ingredients[i].name} (${ingredients[i].measures.us.amount} ${ingredients[i].measures.us.unitShort})`).addClass("list-group-item list-group-item-primary");
+        ingredientsList.append(ingredient);
+    }
+
+    let mealMethod = $("<div>").addClass("row align-items-center justify-content-around p-3")
+    let methodHeading = $("<h2>").text("Method: ").addClass("text-center")
+    let methodList = $("<ol>").addClass("list-group list-group-numbered list-group-flush p-3")
+    //goes through list of instructions
+    for (let i=0; i<instructions.length; i++){
+        let instruction = $("<li>").text(instructions[i].step).addClass("list-group-item list-group-item-primary");
+        methodList.append(instruction);
+    }
+
+    let returnButton = $("<button>").text("Return to search").addClass("btn btn-primary mb-5").attr("id", "return-btn");
+
+    mealHeading.append(mealImage, mealName);
+    mealInfo.append(servings, duration, pricePerServing, veg);
+    mealIngredients.append(ingredientsHeading, ingredientsList)
+    mealMethod.append(methodHeading, methodList);
+    $("#chosen-meal").append(mealHeading, mealInfo, mealIngredients, mealMethod, returnButton);
+});
