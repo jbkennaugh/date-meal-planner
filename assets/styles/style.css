@@ -123,19 +123,23 @@ input{
     border-right: 5px solid black;
 }
 
-.meal-container{
+.meal-container,
+.cocktail-container{
     border: 5px solid var(--darkestred);
 }
 
-.meal-container:hover{
+.meal-container:hover,
+.cocktail-container:hover{
     border: 10px solid var(--red);
 }
 
-.meal-container p{
+.meal-container p,
+.cocktail-container p{
     font-size: 20px;
 }
 
-.meal-preview{
+.meal-preview,
+.cocktail-preview{
     height: 20vh;
     width: 20vw;
 }

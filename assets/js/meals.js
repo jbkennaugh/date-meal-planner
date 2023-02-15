@@ -1,4 +1,4 @@
-let restrictions = {
+let mealRestrictions = {
     dietary: {
         allergies: [],
         intolerances: [],
@@ -21,10 +21,10 @@ getRandomMeals();
 //loads up info on 10 random meals from API
 function getRandomMeals(){
     //assigning for easier readability
-    let vegetarian = restrictions.dietary.vegetarian;
-    let vegan = restrictions.dietary.vegan;
-    let pescetarian = restrictions.dietary.pescetarian;
-    let ingredients = restrictions.ingredients;
+    let vegetarian = mealRestrictions.dietary.vegetarian;
+    let vegan = mealRestrictions.dietary.vegan;
+    let pescetarian = mealRestrictions.dietary.pescetarian;
+    let ingredients = mealRestrictions.ingredients;
 
     if (vegetarian || vegan || pescetarian){
         randomMealURL += "&tags="
@@ -46,7 +46,7 @@ function getRandomMeals(){
 //loads up info on 10 meals based on ingredients from API
 function getMealsByIngredients(){
     //assigning for easier readability
-    let ingredients = restrictions.ingredients;
+    let ingredients = mealRestrictions.ingredients;
 
     for (let i=0; i<ingredients.length; i++){
         if(i>0){ mealByIngredientsURL += ",+"} //if there's more than one ingredient adds ",+" to url
@@ -66,11 +66,11 @@ function getMealsByIngredients(){
 //loads up info on 10 meals based on query from API
 function getMealsByQuery(query){
     //assigning for easier readability
-    let vegetarian = restrictions.dietary.vegetarian;
-    let vegan = restrictions.dietary.vegan;
-    let pescetarian = restrictions.dietary.pescetarian;
-    let intolerances = restrictions.dietary.intolerances;
-    let ingredients = restrictions.ingredients;
+    let vegetarian = mealRestrictions.dietary.vegetarian;
+    let vegan = mealRestrictions.dietary.vegan;
+    let pescetarian = mealRestrictions.dietary.pescetarian;
+    let intolerances = mealRestrictions.dietary.intolerances;
+    let ingredients = mealRestrictions.ingredients;
 
     if (vegetarian || vegan || pescetarian){
         mealByQueryURL += "&diet="
@@ -165,11 +165,11 @@ $("#save-diet-btn").on("click", function(){
     let veganCheck = $("#vegan-check").children().is(":checked");
     let pescetarianCheck = $("#pescetarian-check").children().is(":checked");
 
-    restrictions.dietary.allergies = inputtedAllergies;
-    restrictions.dietary.intolerances = inputtedIntolerances;
-    restrictions.dietary.vegetarian = vegetarianCheck;
-    restrictions.dietary.vegan = veganCheck;
-    restrictions.dietary.pescetarian = pescetarianCheck;
+    mealRestrictions.dietary.allergies = inputtedAllergies;
+    mealRestrictions.dietary.intolerances = inputtedIntolerances;
+    mealRestrictions.dietary.vegetarian = vegetarianCheck;
+    mealRestrictions.dietary.vegan = veganCheck;
+    mealRestrictions.dietary.pescetarian = pescetarianCheck;
 
     getRandomMeals();
 
@@ -180,23 +180,23 @@ $("#save-diet-btn").on("click", function(){
 })
 
 $("#save-ingredients-btn").on("click", function(){
-    restrictions.ingredients = $("#ingredients-input").val().split(",");
+    mealRestrictions.ingredients = $("#ingredients-input").val().split(",");
     let ingredientsList = $("#chosen-ingredients");
     ingredientsList.empty();
 
-    if(!restrictions.ingredients[0]){
+    if(!mealRestrictions.ingredients[0]){
         ingredientsList.append("<p>No ingredients entered yet!</p>");
     }
     else{
         ingredientsList.addClass("list-group-item").text("Ingredients:  ");
-        for(let i=0; i<restrictions.ingredients.length; i++){
-            let ingredient = $("<li>").addClass("list-group-item").text(restrictions.ingredients[i]);
+        for(let i=0; i<mealRestrictions.ingredients.length; i++){
+            let ingredient = $("<li>").addClass("list-group-item").text(mealRestrictions.ingredients[i]);
             ingredientsList.append(ingredient);
         }
     }
 
     //ensures this only runs if ingredients have been added
-    if(restrictions.ingredients[0] !== ""){
+    if(mealRestrictions.ingredients[0] !== ""){
         getMealsByIngredients();
     }
 
@@ -284,7 +284,7 @@ $(document).on("click", ".meal-container", function(event){
         methodList.append(instruction);
     }
 
-    let returnButton = $("<button>").text("Return to search").addClass("btn btn-primary mb-5").attr("id", "return-btn");
+    let returnButton = $("<button>").text("Return to meals").addClass("btn btn-primary mb-5").attr("id", "return-btn");
 
     mealHeading.append(mealImage, mealName);
     mealInfo.append(servings, duration, pricePerServing, veg);
