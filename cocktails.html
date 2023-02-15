@@ -21,39 +21,63 @@
         </div>
     </nav>
 
-    <section id="example-cocktails" class="container bg-primary">
-        example cocktails
+    <section id="cocktails-container" class="container bg-primary">
     </section>
-    <section id="cocktail-search-results" class="container bg-primary hide">
-        cocktail search results
-    </section>
-    <section id="chosen-cocktail" class="container bg-primary hide">
-        chosen cocktail
+    <section id="chosen-cocktail" class="container d-flex flex-column bg-primary hide">
     </section>
 
     <section id="cocktail-search-restrictions" class="d-flex justify-content-center">
-        <div id="choose-filters" class="p-3 mx-3 text-center bg-primary choose hide">
-            <h2>Choose filters</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
+        <div id="choose-diet-requirements" class="container-fluid p-3 mx-3 bg-primary align-items-center filters-popup choose hide">
+            <h2>Choose dietary requirements</h2>
+            <div class="d-flex flex-column justify-content-between w-75 flex-grow-1">
+                <label class="text-center">
+                    Enter any allergies separated by a comma (e.g. "nuts,eggs"):<br>    
+                    <input type="text" name="allergies" id="allergies" placeholder="allergies" class="form-control text-center">
+                </label>
+                <label class="text-center">
+                    Enter any intolerances separated by a comma(e.g. "dairy,gluten"):<br>    
+                    <input type="text" name="intolerances" id="intolerances" placeholder="intolerances" class="form-control text-center">
+                </label>
+                <div class="checkboxes d-flex justify-content-between w-50 align-self-center">
+                    <label id="vegetarian-check">
+                        <input type="checkbox" name="vegetarian"> Vegetarian
+                    </label>
+                    <label id="vegan-check">
+                        <input type="checkbox" name="vegan"> Vegan
+                    </label>
+                    <label id="pescetarian-check">
+                        <input type="checkbox" name="pescetarian"> Pescetarian
+                    </label>
+                </div>
+                <p class="confirmation text-center alert alert-success hide">----------------- Dietary requirements saved! ------------------</p>
+                <button id="save-diet-btn" class="btn btn-primary">Save</button>
+            </div>
         </div>
-        <div id="choose-ingredients" class="p-3 mx-3 text-center bg-primary choose hide">
-            <h2>Choose ingredients</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
-        </div>
-        <div id="choose-first-letter" class="p-3 mx-3 text-center bg-primary choose hide">
-            <h2>Choose first letter</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quas numquam veritatis, cum quo nam est inventore. Hic itaque laboriosam ullam? Vero eligendi reprehenderit corporis similique aliquam sapiente doloribus dignissimos! Adipisci corrupti in porro fuga, pariatur numquam quod ea commodi saepe repellendus aperiam illum itaque debitis dolorem perferendis animi minus?
+        <div id="choose-ingredients" class="container-fluid p-3 mx-3 text-center bg-primary filters-popup choose hide">
+            <h2>Choose ingredients</h2>
+            <label class="text-center lead mb-2">
+                Enter any ingredients below you want to be included in the meal, you can either enter them one by one and hit save each time, or enter them separated by a comma, as follows ("beef,bun,cheese"):   
+                <input type="text" name="ingredients" id="ingredients-input" placeholder="ingredients" class="form-control text-center mt-3">
+            </label>
+            <ul id="chosen-ingredients" class="d-flex list-group list-group-horizontal justify-content-center align-items-center">
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button id="save-ingredients-btn" class="btn btn-primary m-2">Save</button>
+                <button id="clear-ingredients-btn" class="btn btn-primary m-2">Clear</button>
+            </div>
+            <p class="confirmation text-center alert alert-success hide">----------------- Ingredients saved! ------------------</p>
+            <p class="cleared text-center alert alert-danger hide">----------------- Ingredients cleared! ------------------</p>
         </div>
     </section>
     
     <nav id="restrictions-selector" class="navbar fixed-bottom bg-secondary d-flex justify-content-around align-center">
         <div id="filters" class="navbar-brand flex-fill text-center restrictions-nav-item">Filters</div>
         <div id="ingredients" class="navbar-brand flex-fill text-center restrictions-nav-item">Included Ingredients</div>
-        <div id="first-letter" class="navbar-brand flex-fill text-center restrictions-nav-item">Search Cocktails by First Letter</div>
     </nav>
     <!--Adding bootstrap and jQuery-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./assets/js/cocktails.js"></script>
     <script src="./assets/js/restrictions.js"></script>
 </body>
 </html>
