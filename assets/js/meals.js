@@ -24,7 +24,6 @@ function getRandomMeals(){
     let vegetarian = mealRestrictions.dietary.vegetarian;
     let vegan = mealRestrictions.dietary.vegan;
     let pescetarian = mealRestrictions.dietary.pescetarian;
-    let ingredients = mealRestrictions.ingredients;
 
     if (vegetarian || vegan || pescetarian){
         randomMealURL += "&tags="
@@ -217,6 +216,7 @@ $("#clear-ingredients-btn").on("click", function(){
     }, 3000);
 })
 
+//search by query
 $("#meal-search-btn").on("click", function(){
     let query = $("#meal-search-query").val();
 

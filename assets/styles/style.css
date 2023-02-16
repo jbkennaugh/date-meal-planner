@@ -123,6 +123,13 @@ input{
     border-right: 5px solid black;
 }
 
+#cocktails-container,
+#meals-container,
+#chosen-meal,
+#chosen-cocktail{
+    margin-bottom: 10vh;
+}
+
 .meal-container,
 .cocktail-container{
     border: 5px solid var(--darkestred);

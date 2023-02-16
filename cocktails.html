@@ -16,7 +16,7 @@
             <a href="index.html" class="navbar-brand">Home</a>
             <a href="meals.html" class="navbar-brand">Meals</a>
             <a href="movies.html" class="navbar-brand">Movies</a>
-            <input type="text" placeholder="Search cocktails" class="form-control mx-3 flex-fill">
+            <input id="cocktail-search-query" type="text" placeholder="Search cocktails" class="form-control mx-3 flex-fill">
             <button id="cocktail-search-btn" class="btn btn-secondary">Search</button>
         </div>
     </nav>
@@ -27,37 +27,22 @@
     </section>
 
     <section id="cocktail-search-restrictions" class="d-flex justify-content-center">
-        <div id="choose-diet-requirements" class="container-fluid p-3 mx-3 bg-primary align-items-center filters-popup choose hide">
-            <h2>Choose dietary requirements</h2>
-            <div class="d-flex flex-column justify-content-between w-75 flex-grow-1">
-                <label class="text-center">
-                    Enter any allergies separated by a comma (e.g. "nuts,eggs"):<br>    
-                    <input type="text" name="allergies" id="allergies" placeholder="allergies" class="form-control text-center">
+        <div id="choose-filters" class="container-fluid p-3 mx-3 bg-primary align-items-center filters-popup choose hide">
+            <h2>Filter by alcoholic or non-alcoholic</h2>
+            <div class="d-flex flex-column justify-content-center align-items-center w-75 flex-grow-1">
+                <label id="alcoholic-check">
+                    <input type="checkbox" name="non-alcoholic"> Non-Alcoholic
                 </label>
-                <label class="text-center">
-                    Enter any intolerances separated by a comma(e.g. "dairy,gluten"):<br>    
-                    <input type="text" name="intolerances" id="intolerances" placeholder="intolerances" class="form-control text-center">
-                </label>
-                <div class="checkboxes d-flex justify-content-between w-50 align-self-center">
-                    <label id="vegetarian-check">
-                        <input type="checkbox" name="vegetarian"> Vegetarian
-                    </label>
-                    <label id="vegan-check">
-                        <input type="checkbox" name="vegan"> Vegan
-                    </label>
-                    <label id="pescetarian-check">
-                        <input type="checkbox" name="pescetarian"> Pescetarian
-                    </label>
                 </div>
                 <p class="confirmation text-center alert alert-success hide">----------------- Dietary requirements saved! ------------------</p>
-                <button id="save-diet-btn" class="btn btn-primary">Save</button>
+                <button id="save-filters-btn" class="btn btn-primary">Save</button>
             </div>
         </div>
         <div id="choose-ingredients" class="container-fluid p-3 mx-3 text-center bg-primary filters-popup choose hide">
-            <h2>Choose ingredients</h2>
+            <h2>Choose an ingredient</h2>
             <label class="text-center lead mb-2">
-                Enter any ingredients below you want to be included in the meal, you can either enter them one by one and hit save each time, or enter them separated by a comma, as follows ("beef,bun,cheese"):   
-                <input type="text" name="ingredients" id="ingredients-input" placeholder="ingredients" class="form-control text-center mt-3">
+                Enter any one ingredient below you want to search for to be included in the cocktail, I recommend using this to search for the main alcohol/ingredient you want to use to get suggested cocktails based on that:   
+                <input type="text" name="ingredients" id="ingredients-input" placeholder="ingredient" class="form-control text-center mt-3">
             </label>
             <ul id="chosen-ingredients" class="d-flex list-group list-group-horizontal justify-content-center align-items-center">
             </ul>
@@ -65,14 +50,14 @@
                 <button id="save-ingredients-btn" class="btn btn-primary m-2">Save</button>
                 <button id="clear-ingredients-btn" class="btn btn-primary m-2">Clear</button>
             </div>
-            <p class="confirmation text-center alert alert-success hide">----------------- Ingredients saved! ------------------</p>
-            <p class="cleared text-center alert alert-danger hide">----------------- Ingredients cleared! ------------------</p>
+            <p class="confirmation text-center alert alert-success hide">----------------- Ingredient saved! ------------------</p>
+            <p class="cleared text-center alert alert-danger hide">----------------- Ingredient cleared! ------------------</p>
         </div>
     </section>
     
     <nav id="restrictions-selector" class="navbar fixed-bottom bg-secondary d-flex justify-content-around align-center">
-        <div id="filters" class="navbar-brand flex-fill text-center restrictions-nav-item">Filters</div>
-        <div id="ingredients" class="navbar-brand flex-fill text-center restrictions-nav-item">Included Ingredients</div>
+        <div id="filters" class="navbar-brand flex-fill text-center restrictions-nav-item">Alcoholic Toggle</div>
+        <div id="ingredients" class="navbar-brand flex-fill text-center restrictions-nav-item">Main Ingredient</div>
     </nav>
     <!--Adding bootstrap and jQuery-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
