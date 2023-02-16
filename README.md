@@ -1,6 +1,10 @@
 # date-meal-planner
 Website that gives the perfect meal, cocktail and movie to share on your date, will give recipes for each of the meals and cocktails using the tasty API and thecocktailDB API, also has the option to give a random cocktail and/or meal, or even search by your significant other's first letter of their name!
 
+__[Github Repository](https://github.com/jbkennaugh/date-meal-planner/)__
+
+__[Deployed Website](https://jbkennaugh.github.io/date-meal-planner/)__
+
 # Movies section
 Ongoing Movie App using Vanilla JavaScript and RapidAPI
 
@@ -24,7 +28,7 @@ Basic knowledge of HTML, CSS, and JavaScript
 # Installation
 Simply used the deployed link!
 
-Usage
+# Usage
 
 
 Search for movies by keyword by entering the movie name or keyword in the search bar.
