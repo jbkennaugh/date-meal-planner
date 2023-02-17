@@ -11,22 +11,27 @@ const input = document.getElementById("input");
 
 function Seach(e) {
 	console.log(input.value);
-	content.innerHTML = ''
-	fetch(`https://ott-details.p.rapidapi.com/search?title=${input.value}&page=1`, options)
-		.then(response => response.json())
-		.then(response => {
-			console.log(response.results);
-			const list = response.results;
 
-			list.map((item) => {
-				console.log(item);
+	if(!input.value){
+		$("#searchModal").modal("show");
+	}
+	else{
+		content.innerHTML = ''
+		fetch(`https://ott-details.p.rapidapi.com/search?title=${input.value}&page=1`, options)
+			.then(response => response.json())
+			.then(response => {
+				console.log(response.results);
+				const list = response.results;
 
-				content.innerHTML += `
-            <img src="${item.imageurl}" alt="">`;
+				list.map((item) => {
+					console.log(item);
+
+					content.innerHTML += `
+				<img src="${item.imageurl}" alt="">`;
+				})
 			})
-		})
-		.catch(err => console.error(err));
-
+			.catch(err => console.error(err));
+		}
 }
 function genreItem(params) {
 	params.preventDefault();
@@ -126,7 +131,8 @@ function logCheckedServices(checkedServices) {
 	 load(ele);
 	 console.log(e);
 	}
-  }
+}
 
-
-
+$(".close-modal").on("click", function(){
+    $("#searchModal").modal("hide");
+})
