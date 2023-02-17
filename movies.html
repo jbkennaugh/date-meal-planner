@@ -19,7 +19,7 @@
             <a href="meals.html" class="navbar-brand">Meals</a>
             <a href="cocktails.html" class="navbar-brand">Cocktails</a>
             <input class="form-control me-2" type="search" placeholder="Search"  id="input" aria-label="Search">
-            <button class="btn btn-secondary"  onclick="Search()">Search</button>
+            <button class="btn btn-secondary"  onclick="Seach()">Search</button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#options-nav" aria-controls="options-nav" aria-expanded="false" aria-label="Toggle Options Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,7 +41,7 @@
                 Genre
             </button>
             <ul class="dropdown-menu">
-                <li class="dropdown-item" href="#" id="genre" >
+                <li class="dropdown-item"  id="genre" >
                     <div class="row">
                         <div class="col-md-4" id="genreOne">
                             
@@ -59,7 +59,7 @@
 
     <main>
 
-        <div class="movie">
+        <div class="movie image-container">
             <div id="movies">
 
             </div>
@@ -72,11 +72,14 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./assets/js/movies.js"></script>
+    <script src="./assets/js/streaming-services.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            searchGenre();
+            searchgenre();
         });
     </script>
+
 </body>
 
 </html>

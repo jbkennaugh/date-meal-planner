@@ -1120,15 +1120,53 @@ function displayServices() {
         streamingServicesDiv.append(serviceDiv);
     }
 }
-
-$("#save-services-btn").on("click", function(){
+$("#save-services-btn").on("click", check);
+function check(){
+    let checkedServices = [];
     for(let i=0; i<services.length; i++){
         serviceChecks[i] = $(`div[data-label="${services[i].short}"`).find("input").prop("checked");
+
+        if (serviceChecks[i]) {
+            checkedServices.push(services[i]);
+        }
     }
     localStorage.setItem("serviceChecks",JSON.stringify(serviceChecks));
+
+    // Call the logCheckedServices function in app.js and pass the checked services as an argument
+    logCheckedServices(checkedServices);
 
     $(".confirmation").toggleClass("hide");
     setTimeout(function(){
         $(".confirmation").toggleClass("hide");
     }, 3000);
-})
+}
+
+// $("#save-services-btn").on("click", function(){
+//     for(let i=0; i<services.length; i++){
+//         serviceChecks[i] = $(`div[data-label="${services[i].short}"`).find("input").prop("checked");
+
+//         // Check if the checkbox is checked
+//         if (serviceChecks[i]) {
+//             // If checked, log the label of the streaming service to the console
+//             console.log(services[i].value);
+//         }
+//     }
+//     localStorage.setItem("serviceChecks",JSON.stringify(serviceChecks));
+
+//     $(".confirmation").toggleClass("hide");
+//     setTimeout(function(){
+//         $(".confirmation").toggleClass("hide");
+//     }, 3000);
+// })
+
+// $("#save-services-btn").on("click", function(){
+//     for(let i=0; i<services.length; i++){
+//         serviceChecks[i] = $(`div[data-label="${services[i].short}"`).find("input").prop("checked");
+//     }
+//     localStorage.setItem("serviceChecks",JSON.stringify(serviceChecks));
+
+//     $(".confirmation").toggleClass("hide");
+//     setTimeout(function(){
+//         $(".confirmation").toggleClass("hide");
+//     }, 3000);
+// })
