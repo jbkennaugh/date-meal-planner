@@ -190,11 +190,15 @@ $("#cocktail-search-btn").on("click", function(){
     let query = $("#cocktail-search-query").val();
 
     if(!query){
-        alert("Please ensure you've entered a search query")
+        $("#searchModal").modal("show");
     }
     else{
         getCocktailsByQuery(query);
     }
+})
+
+$(".close-modal").on("click", function(){
+    $("#searchModal").modal("hide");
 })
 
 //listens for return button press
