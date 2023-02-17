@@ -20,22 +20,14 @@ View movie details such as title, release date, overview, and more
 Save favorite movies for quick access in the future
 Simple and user-friendly interface
 
-# Prerequisites
+# Prerequisites for creation
 
 A RapidAPI account (free or paid)
 Basic knowledge of HTML, CSS, and JavaScript
 
 # Installation
+
 Simply used the deployed link!
-
-# Usage
-
-
-Search for movies by keyword by entering the movie name or keyword in the search bar.
-
-View movie details by clicking on a movie in the search results. The details will be displayed on the right side of the screen.
-
-Save a movie to your favorites by clicking the "Save" button in the movie details section. The saved movies will be displayed in the "Favorites" section.
 
 # Contributions
 This is an ongoing project between the two Joes. We are both maintaining workflow through Asana and Github and through constant zoom calls.
@@ -78,4 +70,9 @@ This movie app is a simple and easy-to-use application that allows you to search
 
 If you have any feedback, please reach out to us at JOEY + JOE VALENTINES DAY CAROUSEL WEBPAGE
 
+## Credits
 
+- Credits to https://www.svgrepo.com and Credit to https://iconoir.com/ for the favicons used on the site
+- Credits to https://rapidapi.com/gox-ai-gox-ai-default/api/ott-details - Movies API
+- Credits to https://spoonacular.com/food-api - Meals API
+- Credits to https://www.thecocktaildb.com/ - Cocktails API
