@@ -138,16 +138,17 @@ input{
 .meal-container:hover,
 .cocktail-container:hover{
     border: 10px solid var(--red);
+    cursor: pointer;
 }
 
 .meal-container p,
 .cocktail-container p{
-    font-size: 20px;
+    font-size: 1.4rem
 }
 
 .meal-preview,
 .cocktail-preview{
-    height: 20vh;
+    height: 15vw;
     width: 20vw;
 }
 
