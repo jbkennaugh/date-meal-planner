@@ -125,7 +125,7 @@ function displayRandomMeals(recipes){
     displayMealsSection.empty();
     for(let i=0; i<10; i++){
         let mealDiv = $("<div>").addClass("meal-container row d-flex align-items-center justify-content-around p-3").attr({"meal-number":i, "id":i});
-        let mealImage = $("<img>").addClass("meal-preview").attr("src", recipes[i].image)
+        let mealImage = $("<img>").addClass("meal-preview img-responsive").attr("src", recipes[i].image)
         let mealName = $("<h2>").addClass("col-3").text(recipes[i].title)
         let mealInfo = $("<div>").addClass("col-3 d-flex flex-column justify-content-center");
         let servings = $("<p>").text(`Servings: ${recipes[i].servings}`);
@@ -144,7 +144,7 @@ function displayIngredientMeals(response){
     displayMealsSection.empty();
     for(let i=0; i<10; i++){
         let mealDiv = $("<div>").addClass("meal-container row d-flex align-items-center justify-content-around p-3").attr({"meal-number":i, "id":i});
-        let mealImage = $("<img>").addClass("meal-preview").attr("src", response[i].image)
+        let mealImage = $("<img>").addClass("meal-preview img-responsive").attr("src", response[i].image)
         let mealName = $("<h2>").addClass("col-3").text(response[i].title)
         let mealInfo = $("<div>").addClass("col-3 d-flex flex-column justify-content-center");
         let usedIngredients = $("<p>").text(`No. Ingredients Used: ${response[i].usedIngredientCount}`);
@@ -257,7 +257,7 @@ $(document).on("click", ".meal-container", function(event){
     console.log(recipesInfo);
 
     let mealHeading = $("<div>").addClass("row align-items-center justify-content-around p-3")
-    let mealImage = $("<img>").addClass("meal-preview col-3").attr("src", recipes[selectedMealNumber].image)
+    let mealImage = $("<img>").addClass("meal-preview img-responsive col-3").attr("src", recipes[selectedMealNumber].image)
     let mealName = $("<h1>").addClass("col-9 text-center").text(recipes[selectedMealNumber].title)
     
     let mealInfo = $("<div>").addClass("row flex-row align-items-center justify-content-around text-center p-3");
