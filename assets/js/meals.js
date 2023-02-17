@@ -116,8 +116,10 @@ function getRecipeFromIDs(queriedMeals){
             recipes.push(response);
         });
     }
-    recipesInfo = recipes;
-    displayRandomMeals(recipes);
+    setTimeout(function(){
+        recipesInfo = recipes;
+        displayRandomMeals(recipes);
+    }, 750)
 }
 
 //used to display random meal info from API
@@ -258,7 +260,6 @@ $(document).on("click", ".meal-container", function(event){
     let recipes = recipesInfo.recipes;
     let instructions = recipes[selectedMealNumber].analyzedInstructions[0].steps;
     let ingredients = recipes[selectedMealNumber].extendedIngredients;
-    console.log(recipesInfo);
 
     let mealHeading = $("<div>").addClass("row align-items-center justify-content-around p-3")
     let mealImage = $("<img>").addClass("meal-preview img-responsive col-3").attr("src", recipes[selectedMealNumber].image)

@@ -117,7 +117,6 @@ function displayRandomCocktails(cocktails){
 function displayQueriedCocktails(cocktails){
     //changing for readibility
     displayCocktailsSection.empty();
-    console.log(cocktails);
     let searchResults = $("<h4>").text(`Search results: ${cocktails.drinks.length}`).addClass("d-flex align-items-center justify-content-center p-2 pt-3")
     displayCocktailsSection.append(searchResults);
 
@@ -225,7 +224,6 @@ $(document).on("click", ".cocktail-container", function(event){
     selectedCocktailDiv = $(`#${selectedCocktailDiv.id}`); //converts to jquery for jquery functions
     let selectedCocktailNumber = selectedCocktailDiv.attr("cocktail-number");
     let cocktails = cocktailsInfo;
-    console.log(cocktails);
     let cocktail = cocktails[selectedCocktailNumber];
     //add ingredients to Arr ingredients, cannot find a more efficient way to do this due to how the response JSON is laid out
     let ingredientKeys = [], measurementKeys = [];
